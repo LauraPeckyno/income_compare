@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+    <div class="outerContainer">
+        <div class="introText">Intro text here</div>
+        <div class="graphic">graphic</div>
+        <div class="instructionsText">instructions here:  User to supply two different zip codes for areas where they want to live. The census api will return the two values. The values will display in the output div.</div>
+        <div class="inputForm">input form   
+            <div class="inputs">
+            <form id="zipCodesForm">
+                <div class="zip1Input">
+                    <label for="zip1">Enter the zip code of one area to compare.</label>
+                    <input type="text" id="zipcode1" name="zipcode1"></div>
+                <div class="zip2Input">
+                    <label for="zip2">Enter a second zip code of an area you'd like to compare.</label>
+                    <input type="text" id="zipcode2" name="zipcode2"></div>
+                </div>
+                <button id="submitBtn">Compare</button>
+            </form>
+            </div>
+        </div>
+            
+        </div>
+<div class="output">
+    <div class="zipOutput">zip comparison output</div>
+</div>
+    </div>    
+        <script type="module" src="./app.mjs" async defer></script>
+    </body>
+</html>
