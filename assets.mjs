@@ -6,6 +6,7 @@ const ziptasticApiEndpoint = 'http://ziptasticapi.com';  // base ziptastic url
 const formBtn = document.querySelector(".submitBtn");
 
 import { validateZipCodes } from './validate.mjs'; // import the zip code validation from the module
+import { displayResults } from './output.mjs';
 
 form.addEventListener('submit', async (e) => {
   e.preventDefault();
@@ -49,18 +50,8 @@ form.addEventListener('submit', async (e) => {
         const state2 = ziptasticData2.state;
 
         // Add results to page
-        resultsDiv.style.display = "block";
-        resultsDiv.innerHTML = `    
-        <h2 class="playwrite-hr-resultHead">Results</h2><hr>
-            <div>
-                <h3 class="resultCity">${city1}, ${state1} ${zipCode1}</h3>
-                <p class="resultIncome">Median Annual Household Income: $${medianHouseholdIncome1}.00</p>
-            </div>
-            <div>
-                <h3 class="resultCity">${city2}, ${state2} ${zipCode2}</h3>
-                <p class="resultIncome">Median Annual Household Income: $${medianHouseholdIncome2}.00</p>
-            </div>
-        `;
+
+        displayResults(resultsDiv, city1, state1, zipCode1, medianHouseholdIncome1, city2, state2, zipCode2, medianHouseholdIncome2);
     } catch (error) {
         console.error(error);
         alert('Error fetching data. Please try again.');
