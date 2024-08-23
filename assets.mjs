@@ -7,6 +7,7 @@ const formBtn = document.querySelector(".submitBtn");
 
 import { validateZipCodes } from './validate.mjs'; // import the zip code validation from the module
 import { displayResults } from './output.mjs';
+import { getNews } from './newsResults.mjs'
 
 form.addEventListener('submit', async (e) => {
   e.preventDefault();
@@ -52,8 +53,9 @@ form.addEventListener('submit', async (e) => {
         // Add results to page
 
         displayResults(resultsDiv, city1, state1, zipCode1, medianHouseholdIncome1, city2, state2, zipCode2, medianHouseholdIncome2);
+        getNews(resultsDiv, ziptasticData1, ziptasticData2);
     } catch (error) {
         console.error(error);
         alert('Error fetching data. Please try again.');
-    }
-});
+      }
+    });
