@@ -1,38 +1,58 @@
-<!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title></title>
-        <meta name="description" content="">
+        <meta name="description" content>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="style.css">
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Playwrite+HR:wght@100..400&display=swap');
+            </style>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&family=Playwrite+HR:wght@100..400&display=swap');
+            </style>
     </head>
     <body>
-    <div class="outerContainer">
-        <div class="introText">Intro text here</div>
-        <div class="graphic">graphic</div>
-        <div class="instructionsText">instructions here:  User to supply two different zip codes for areas where they want to live. The census api will return the two values. The values will display in the output div.</div>
-        <div class="inputForm">input form   
-            <div class="inputs">
-            <form id="zipCodesForm">
-                <div class="zip1Input">
-                    <label for="zip1">Enter the zip code of one area to compare.</label>
-                    <input type="text" id="zipcode1" name="zipcode1"></div>
-                <div class="zip2Input">
-                    <label for="zip2">Enter a second zip code of an area you'd like to compare.</label>
-                    <input type="text" id="zipcode2" name="zipcode2"></div>
+        <div class="outerContainer">
+            <div class="playwrite-hr-introText"><h1>Zipcode Income
+                    Comparison</h1></div>
+            <div class="graphic"><img
+                    src="https://pecknotes.com/wheretomove.png"
+                    alt="photo of woman considering her next move"
+                    width="100%"></div>
+            <div class="playwrite-hr-instructionsText">
+                <h2>Is that place a good idea?</h2>
+                <p class="inconsolata-regular">Use this handy tool to compare
+                    the median household incomes
+                    for two different zip codes.</p>
+            </div>
+            <div class="inputForm">
+                <form id="zipCodesForm">
+                    <div class="inputs">
+                        <div class="zipInputs">
+                            <label for="zipcode1"
+                                class="inconsolata-regular">Zipcode 1 (5
+                                digits)</label>
+                            <input type="text" id="zipcode1"
+                                name="zipcode1"><br>
+                            <label for="zipcode2"
+                                class="inconsolata-regular">Zipcode 2 (5
+                                digits)</label>
+                            <input type="text" id="zipcode2" name="zipcode2">
+                        </div>
+                        <div id="buttn">
+                            <button id="submitBtn" class="submitBtn"
+                                type="submit">Compare</button>
+                        </div>
+                    </div>
+                </form>
+                <div class="output">
+                    <div class="zipOutput">
+                    </div>
                 </div>
-                <button class="submitBtn">Compare</button>
-            </form>
             </div>
         </div>
-            
-        </div>
-<div class="output">
-    <div class="zipOutput">zip comparison output</div>
-</div>
-    </div>    
-        <script type="module" src="./app.mjs" async defer></script>
+        <script src="./assets2.mjs" async defer></script>
     </body>
 </html>
