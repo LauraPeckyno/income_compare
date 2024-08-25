@@ -1,5 +1,11 @@
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Inconsolata", monospace;
+    font-optical-sizing: auto;
+    color: black;
+    font-weight: 300;
+    font-style: normal;
+    font-variation-settings:
+        "wdth" 100;
     display: flex;
     background-color: rgb(245, 186, 186);
     justify-content: center;
@@ -39,6 +45,18 @@ body {
     font-style: normal;
     font-weight: bold;
     color: black;
+    text-align: center;
+    padding: 25px;
+}
+.playwrite-hr-newsHead {
+    font-family: "Inconsolata", monospace;
+    font-optical-sizing: auto;
+    color: black;
+    font-weight:bold;
+    font-style: normal;
+    font-variation-settings:
+        "wdth" 100;
+    font-size: 24px;
     text-align: center;
     padding: 25px;
 }
@@ -113,14 +131,26 @@ body {
 
 .zipOutput {
     background-color: rgb(255, 239, 215);
-    display: none;
-    padding: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
     border-radius: 15px;
     box-shadow: 2px 2px rgba(89, 94, 89, 0.288);
 }
-
+.newsResDiv {
+    background-color: rgb(255, 239, 215);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 10px;
+    border-radius: 15px;
+    box-shadow: 2px 2px rgba(89, 94, 89, 0.288);
+}
 .output {
     border-radius: 25px;
+    display: none;
 }
 
 .outerContainer {
@@ -190,4 +220,24 @@ body {
     width: 100%;
     display: flex;
     justify-content: center;
+}
+#city1ResultsDiv {
+    margin: 5px;
+    font-family: "Inconsolata", monospace;
+    font-optical-sizing: auto;
+    color: black;
+    font-weight: 300;
+    font-style: normal;
+    font-variation-settings:
+        "wdth" 100;
+}
+#city2ResultsDiv {
+    margin: 5px;
+    font-family: "Inconsolata", monospace;
+    font-optical-sizing: auto;
+    color: black;
+    font-weight: 300;
+    font-style: normal;
+    font-variation-settings:
+        "wdth" 100;
 }

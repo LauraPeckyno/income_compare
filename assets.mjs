@@ -1,9 +1,12 @@
 const form = document.querySelector("#zipCodesForm");
 const resultsDiv = document.querySelector(".zipOutput");
+const newsResultsDiv = document.querySelector(".newsResDiv")
+const resultsDivContainer = document.querySelector(".output");
 const apiKey = '322ff39417763138902d1fd67b9f59bf79067861'; // Census API key
 const censusApiEndpoint = 'https://api.census.gov/data/2020/acs/acs5';  /// base census url
 const ziptasticApiEndpoint = 'http://ziptasticapi.com';  // base ziptastic url
 const formBtn = document.querySelector(".submitBtn");
+
 
 import { validateZipCodes } from './validate.mjs'; // import the zip code validation from the module
 import { displayResults } from './output.mjs';
@@ -47,13 +50,17 @@ form.addEventListener('submit', async (e) => {
         // Pull out the labeled city and state names
         const city1 = ziptasticData1.city;
         const state1 = ziptasticData1.state;
+        console.log(city1);
+        console.log(state1);
         const city2 = ziptasticData2.city;
         const state2 = ziptasticData2.state;
+        console.log(city2);
+        console.log(state2);
 
         // Add results to page
 
-        displayResults(resultsDiv, city1, state1, zipCode1, medianHouseholdIncome1, city2, state2, zipCode2, medianHouseholdIncome2);
-        getNews(resultsDiv, ziptasticData1, ziptasticData2);
+        displayResults(resultsDiv, resultsDivContainer, city1, state1, zipCode1, medianHouseholdIncome1, city2, state2, zipCode2, medianHouseholdIncome2);
+        getNews(city1, state1, city2, state2, resultsDiv);
     } catch (error) {
         console.error(error);
         alert('Error fetching data. Please try again.');
